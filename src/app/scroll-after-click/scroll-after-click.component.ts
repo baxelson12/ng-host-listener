@@ -28,6 +28,7 @@ export class ScrollAfterClickComponent {
 
     // Basically the same as previous example, except we made a new stream
     // watching for clicks.  Delay on the first click, then bring in the event stream.
+    // USE first() to complete outer observable.
     private readonly clickStream = new Subject<void>();
     get clickStream$(): Observable<Event> {
       return this.clickStream.pipe(

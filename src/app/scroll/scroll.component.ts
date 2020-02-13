@@ -20,6 +20,7 @@ export class ScrollComponent {
   
     // On the first emission, delay.
     // After the delay, REMAP to the original stream (concatMap)
+    // USE first() to complete outer observable.
     get eventStream$(): Observable<Event> {
       return this.eventStream.pipe(
         delay(DELAY),
